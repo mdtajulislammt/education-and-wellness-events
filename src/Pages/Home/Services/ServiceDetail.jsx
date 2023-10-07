@@ -11,7 +11,6 @@ const ServiceDetail = () => {
           const fineservicedata = serviceData?.find(service=>service.id == id)
           setServices(fineservicedata)
      },[id,serviceData])
-     console.log(services);
      
      return (
           <div>

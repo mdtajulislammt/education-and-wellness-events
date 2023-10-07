@@ -4,21 +4,53 @@ import banner3 from '../../../assets/IIUEODf.png'
 import backgroud from '../../../assets/SHA021.png'
 import backgroud2 from '../../../assets/SHA43.png'
 import backgroud3 from '../../../assets/MS425.png'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from 'react'
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
      return (
           <div>
                <div className="carousel w-full h-[50vh] md:h-[70vh] lg:h-[90vh] ">
   <div id="slide1" className="carousel-item relative w-full bg-slate-100">
     <div className=' flex items-center justify-between lg:gap-28  mx-5 lg:mx-auto md:mx-auto'>
+   
      <div className='w-[400px] lg:w-[600px]'>
-          <h1 className=' md:text-3xl lg:text-5xl font-extrabold text-[#00bf73] mb-5'>We Ensure Better Education For a Better World</h1>
-          <p className=' text-xs lg:text-base'>In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble.</p>
+     <div data-aos="fade-up"
+     data-aos-duration="1520">
+          <h1 className=' md:text-3xl lg:text-5xl font-extrabold text-[#00bf73] mb-5'>We Ensure Better Education For a Better World</h1></div>
+          <div data-aos="fade-up"
+     data-aos-duration="1500">
+          <p className=' text-xs lg:text-base'>In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telescope known as the Hubble.</p> </div>
      </div>
+     
     <div className=' relative'>
+
+    <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="2500">
+
      <img src={backgroud} className=' w-full md:mt-5 lg:mt-20 absolute' alt="" />
+     </div>
+     <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="2700">
+
      <img src={backgroud2} className=' w-full md:-ml-10 ml-4 md:mt-5 lg:mt-20 absolute' alt="" />
-    <img src={banner3} className="w-[200px] lg:w-[350px]  relative  lg:h-[500px]" />
+     </div>
+
+     <div data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="1000">
+
+    <img src= {banner3} className="w-[200px] lg:w-[350px]  relative  lg:h-[500px]" />
+     </div>
     </div>
     </div>
     <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-7 lg:top-1/2">

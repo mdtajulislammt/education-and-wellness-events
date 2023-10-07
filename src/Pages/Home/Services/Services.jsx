@@ -29,7 +29,7 @@ const Services = ({services}) => {
                </div></div>
                <div className='grid grid-cols- gap-8 mt-8'>
                     <div data-aos="fade-right"
-     data-aos-offset="300"
+     data-aos-offset="100"
      data-aos-easing="ease-in-sine">
                     <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 '>
                         {

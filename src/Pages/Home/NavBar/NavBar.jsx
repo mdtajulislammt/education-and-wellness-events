@@ -6,9 +6,9 @@ const NavBar = () => {
      <li><NavLink to='/'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold "
               }>Home</NavLink></li>
-     <li><NavLink to='/services'  className={({ isActive, isPending }) =>
+     <li><NavLink to='/contact'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
-              }>Service</NavLink></li>
+              }>Contact</NavLink></li>
      <li><NavLink to='/about'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
               }>About</NavLink></li>
@@ -44,12 +44,16 @@ const NavBar = () => {
     <NavLink  to={'/register'}>Register</NavLink >
       </ul>
     </div>
-         <div className="flex items-center gap-1 menu menu-horizontal">
-         <CiUser className=" text-black hover:text-[#00bf73] hover:underline"/>
-    <div className=" flex gap-2 ">
-    <Link to={'/login'} className='hover:text-[#00bf73] hover:underline'>Login</Link> 
-    <span>/</span>
-    <Link to={'/register'} className='hover:text-[#00bf73] hover:underline' >Register</Link>
+         <div className="flex items-center justify-center gap-2 menu menu-horizontal">
+         <CiUser className=" text-black hover:text-[#00bf73] "/>
+    <div className=" flex items-center justify-center ">
+    <NavLink to='/login'  className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
+              }>LogIn</NavLink>
+    <li className=" mx-2">/</li>
+    <NavLink to='/register'  className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
+              }>Register</NavLink>
     </div>
          </div>
   </div>
