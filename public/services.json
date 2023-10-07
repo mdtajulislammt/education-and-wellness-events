@@ -1,0 +1,53 @@
+[
+     {
+       "id": 1,
+       "name": "Workshops and Webinars",
+       "image": "https://i.ibb.co/k3s5972/workshops.jpg",
+       "price": 29.99,
+       "short_description": "Join our Mindful Productivity workshop and transform the way you approach your daily tasks. Discover mindfulness techniques that enhance focus, reduce stress, and boost overall productivity. Through interactive exercises, you'll learn practical strategies to create a balanced and focused work environment. Elevate your efficiency and well-being with this engaging and insightful workshop.In the era of virtual connections, join our webinar,The Power of Networking in the Digital Age, to master the art of building meaningful professional relationships. Our expert speaker will share insights into leveraging online platforms, crafting a compelling digital presence, and navigating virtual networking events. Whether you're an entrepreneur, professional, or job seeker, learn how to harness the potential of digital networking to advance your career and achieve your goals. Don't miss out on this transformative webinar!",
+       "rating": 4.5
+
+     },
+     {
+       "id": 2,
+       "name": "Career Fairs",
+       "image": "https://i.ibb.co/z4Pm2SB/Career-Fairs.png",
+       "price": 39.99,
+       "short_description": "Are you ready to chart your course to a successful and fulfilling career? Join us at the Future Horizons Expo, where opportunities abound and connections flourish! This dynamic career fair brings together leading companies, organizations, and job seekers in a vibrant networking environment.Explore diverse career paths, engage with recruiters from top companies, and gain valuable insights through interactive workshops and panel discussions. Whether you're a recent graduate, a seasoned professional, or someone exploring new career avenues, the Future Horizons Expo has something for everyone.",
+       "rating": 3.8
+     },
+     {
+       "id": 3,
+       "name": "Educational Conferences",
+       "image": "https://i.ibb.co/VjDz56D/pngtree-woman-giving-pres-Educational-Conference.jpg",
+       "price": 49.99,
+       "short_description": "Embark on a transformative educational journey at Knowledge Nexus 2023, our premier educational conference that brings together thought leaders, educators, and lifelong learners. This immersive event is a convergence of ideas, innovation, and inspiration, designed to shape the future of education.",
+       "rating": 4.2
+     },
+     {
+      "id": 4,
+      "name": "Training Programs",
+      "image": "https://i.ibb.co/hCRRF7m/Training-Programs.jpg",
+      "price": 59.99,
+      "short_description": "Unlock your potential and master new skills with our SkillCraft Intensive Training Series! This comprehensive training program is designed to empower individuals seeking to enhance their expertise, advance their careers, and stay at the cutting edge of industry trends.",
+      "rating": 4.0
+    },
+    {
+      "id": 5,
+      "name": "Special Education",
+      "image": "https://i.ibb.co/zZyTnR8/Special-Education.jpg",
+      "price": 69.99,
+      "short_description": "Welcome to Inclusivity Illuminated, a groundbreaking symposium dedicated to advancing and celebrating inclusive education for learners with diverse needs. This special education event is a beacon of knowledge, fostering collaboration among educators, parents, and professionals dedicated to creating empowering educational environments.",
+      "rating": 4.8
+    },
+    {
+      "id": 6,
+      "name": "Literary Readings and Book Clubs",
+      "image": "https://i.ibb.co/9912nv7/Literary-Readings-and-Book-Clubs.jpg",
+      "price": 79.99,
+      "short_description": "Step into the enchanting world of words at Verse & Prose Haven, a literary soirée that beckons bibliophiles and wordsmiths alike. Join us for an evening of literary readings, book discussions, and the joyous camaraderie of fellow book lovers.",
+      "rating": 3.5
+    }
+     
+   ]
+   

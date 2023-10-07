@@ -6,7 +6,7 @@ const NavBar = () => {
      <li><NavLink to='/'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold "
               }>Home</NavLink></li>
-     <li><NavLink to='/service'  className={({ isActive, isPending }) =>
+     <li><NavLink to='/services'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
               }>Service</NavLink></li>
      <li><NavLink to='/about'  className={({ isActive, isPending }) =>
@@ -15,7 +15,7 @@ const NavBar = () => {
         
      </>
      return (
-          <div className="mx-3 md:mx-14 lg:mx-20 sticky top-0">
+          <div className="mx-3 md:mx-14 lg:mx-20">
                <div className="navbar bg-base-100 rounded-xl ">
   <div className="navbar-start">
     <div className="dropdown">
@@ -37,19 +37,19 @@ const NavBar = () => {
 
   <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost hidden ">
-      <CiUser className=" text-black"/>
+      <CiUser className=" text-black "/>
       </label>
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 w-20 z-[1] p-2 shadow bg-base-100 rounded-box ">
-      <Link to={'/login'}>Login</Link> 
-    <Link to={'/register'}>Register</Link>
+      <NavLink  to={'/login'} >Login</NavLink > 
+    <NavLink  to={'/register'}>Register</NavLink >
       </ul>
     </div>
          <div className="flex items-center gap-1 menu menu-horizontal">
-         <CiUser className=" text-black "/>
+         <CiUser className=" text-black hover:text-[#00bf73] hover:underline"/>
     <div className=" flex gap-2 ">
-    <Link to={'/login'}>Login</Link> 
+    <Link to={'/login'} className='hover:text-[#00bf73] hover:underline'>Login</Link> 
     <span>/</span>
-    <Link to={'/register'}>Register</Link>
+    <Link to={'/register'} className='hover:text-[#00bf73] hover:underline' >Register</Link>
     </div>
          </div>
   </div>
