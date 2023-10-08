@@ -12,18 +12,18 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [showPassword,setShowPassword] = useState(false)
-  const {register,signInWithGoogle} = useContext(AuthContext)
+  const {register,signInWithGoogle,updateUser} = useContext(AuthContext)
   const navigate = useNavigate()
      const location = useLocation()
 
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value ;
-    const img = e.target.img.value ;
+    const image = e.target.img.value ;
     const email = e.target.email.value ;
     const password = e.target.password.value ;
     const accepte = e.target.terms.checked ;
-    console.log(email,password,name,img);
+    console.log(email,password,name);
 
     if(password.length < 6 ){
       toast.error('Password must be at least 6 characters or longer')
@@ -46,7 +46,11 @@ const Register = () => {
       toast.success('Successfully Register!')
       setTimeout(()=>{navigate(location?.state ? location.state : '/')},2000)
       
-      
+            //update Profile 
+            updateUser(name,image)
+        .then(()=>console.log('update Profile Success'))
+        .catch((error)=>console.log('error updating Profile'))
+        
       
     })
     .catch(err => {
@@ -54,6 +58,8 @@ const Register = () => {
       toast.error("Register Failed " + err.message)
     })
   }
+
+  
 
   //google account login setup
   const handleGoogle =() => {
@@ -103,7 +109,7 @@ const Register = () => {
                placeholder="Enter your Photo URL"
                className=" p-3 w-full  focus:outline-none "
                name="img"
-               required
+               
              />
              </div>
         </div>
@@ -154,13 +160,13 @@ const Register = () => {
         <div className="form-control mt-6">
           <button className="p-3 rounded-md font-semibold text-white hover:text-black bg-[#00bf73]">Register</button>
         </div>
-        <div className=' flex items-center gap-2 justify-center'>
+        <div className=' flex items-center gap-2 justify-center mt-5'>
                     <div className=' w-16  border-b-2  border-[#00bf73]'></div>
                     <p>or</p>
                     <div className=' w-16  border-b-2  border-[#00bf73]'></div>
                     
                </div>
-               <div className=" md:ml-10 ">
+               <div className=" md:ml-10  ">
                
                <Link><button className=" flex bg-[#00bf7331] hover:bg-white w-80 md:w-96 my-3 items-center gap-2 p-2 px-16 md:px-20 rounded-lg  font-medium border border-[#00bf73] justify-center block"><BiLogoGithub/> <span className="text-[#00bf73] hover:text-black ">Sign up with GitHub</span></button></Link>
 
