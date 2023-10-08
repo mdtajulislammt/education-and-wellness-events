@@ -18,9 +18,11 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - B: `ReferenceError: greetign is not defined`
 
-<i>Write your explanation here</i>
+
+
+<i>When you try to log greetign, which has not been declared, it will result in a reference error.</i>
 
 </p>
 </details>
@@ -43,9 +45,9 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: `"12"`
 
-<i>Write your explanation here</i>
+<i>Here the num argument is of type two , so JavaScript converts 1 to a string and concatenates the string "2", resulting in the string "12".</i>
 
 </p>
 </details>
@@ -69,9 +71,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - A: `['🍕', '🍫', '🥑', '🍔']`
 
-<i>Write your explanation here</i>
+<i>Food is not modified by info objects. Changing the value of info.favoriteFood to "🍝" does not affect the parent food array. Therefore, so logging it does not change the value of the food remains the same</i>
 
 </p>
 </details>
@@ -94,9 +96,9 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - B: `Hi there, undefined`
 
-<i>Write your explanation here</i>
+<i>The sayHi function expects an argument name, but here sayHi() is called without passing any arguments, so the parameter name inside the function becomes undefined.</i>
 
 </p>
 </details>
@@ -122,9 +124,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: - C: 3
 
-<i>Write your explanation here</i>
+<i>Values of 0 are treated as false by JavaScript convention. Therefore, the if condition will be true only for elements 1, 2 and 3. For each of these values, the count will increase by 1. After the loop, the count will be 3, and that's all it will be.</i>
 
 </p>
 </details>
