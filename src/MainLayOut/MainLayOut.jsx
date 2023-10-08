@@ -3,6 +3,7 @@ import NavBar from "../Pages/Home/NavBar/NavBar";
 import Footer from "../Pages/Footer/Footer";
 
 
+
 const MainLayOut = () => {
      return (
           
@@ -10,6 +11,7 @@ const MainLayOut = () => {
                <NavBar></NavBar>
              <Outlet></Outlet> 
              <Footer></Footer> 
+             
           </div>
      );
 };

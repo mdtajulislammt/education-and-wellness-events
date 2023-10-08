@@ -1,19 +1,79 @@
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { BiSolidUser,BiSolidPhotoAlbum,BiLogoFacebook,BiLogoGithub} from "react-icons/bi";
 import {FcGoogle} from "react-icons/fc";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {MdEmail } from "react-icons/md";
 import {RiLockPasswordFill} from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
   const [showPassword,setShowPassword] = useState(false)
+  const {register,signInWithGoogle} = useContext(AuthContext)
+  const navigate = useNavigate()
+     const location = useLocation()
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value ;
+    const img = e.target.img.value ;
+    const email = e.target.email.value ;
+    const password = e.target.password.value ;
+    const accepte = e.target.terms.checked ;
+    console.log(email,password,name,img);
+
+    if(password.length < 6 ){
+      toast.error('Password must be at least 6 characters or longer')
+      return
+  }else if(!/[A-Z]/.test(password)){
+    toast.error('Password must contain at least one uppercase letter')
+    return ;
+  }else if(!/[$&+,:;=?@#|'<>.-^*()%!]/.test(password)){
+    toast.error('Password must contain at least one special character')
+    return ;
+  }else if(!accepte){
+    toast.error('You must accept the terms and conditions')
+    return ;
+  }
+
+    //register setup
+    register(email,password)
+    .then(res =>{
+      console.log(res.user)
+      toast.success('Successfully Register!')
+      setTimeout(()=>{navigate(location?.state ? location.state : '/')},2000)
+      
+      
+      
+    })
+    .catch(err => {
+      console.log(err.message)
+      toast.error("Register Failed " + err.message)
+    })
+  }
+
+  //google account login setup
+  const handleGoogle =() => {
+    signInWithGoogle()
+    .then(res=>{
+      console.log(res.user);
+      toast.success('Successfully Google Register!')
+      setTimeout(()=>{navigate(location?.state ? location.state : '/')},1000)
+    })
+    .catch(err =>{
+      console.log(err.message)
+      toast.error('Invalid Registration Credentials')
+    })
+  }
      return (
           <div>
-              <div className=" text-black text-center rounded-xl  border border-[#00bf73] w-[500px] p-5 mx-auto mt-8 mb-16">
+              <div className=" text-black text-center rounded-xl  border border-[#00bf73] w-[370px] md:w-[500px] p-5 mx-auto mt-8 mb-16">
       <h2 className=" text-5xl text-[#00bf73] font-semibold my-10 ">Register </h2>
-      <form  className=" mx-auto ">
+
+      <form onSubmit={handleRegister}  className=" mx-auto ">
         <div className="form-control">
           <label className="label">
                
@@ -48,19 +108,7 @@ const Register = () => {
              </div>
         </div>
         <div className="form-control">
-          {/* {
-            loginErr &&
-            <p className="text-red-500 text-sm">
-              {loginErr}
-            </p>
-          }
-          {
-            loginSuccess &&
-        
-            <p className="text-green-500 text-sm">
-              {loginSuccess}
-            </p>
-          } */}
+          
           <label className="label">
                
             <span className="label-text font-semibold text-[#00bf73]">Email</span>
@@ -96,8 +144,8 @@ const Register = () => {
           <label className="label">
           
       <div className="flex items-center">
-          <input id="link-checkbox" type="checkbox" value="" className="w-3 h-4 text-[#00bf73] focus:outline-none" />
-          <label htmlFor="link-checkbox" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-[#00bf73] 
+          <input id="terms" type="checkbox" name="terms" value="" className="w-3 h-4 text-[#00bf73] focus:outline-none" />
+          <label htmlFor="terms" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-[#00bf73] 
           dark:text-[#00bf73] hover:underline ">terms and conditions</a>.</label>
       </div>
 
@@ -112,20 +160,22 @@ const Register = () => {
                     <div className=' w-16  border-b-2  border-[#00bf73]'></div>
                     
                </div>
-               <div className=" ml-10 ">
+               <div className=" md:ml-10 ">
                
-               <Link><button className=" flex bg-[#00bf7331] hover:bg-white md:w-96 my-3 items-center gap-2 p-2 px-20 rounded-lg  font-medium border border-[#00bf73] justify-center block"><BiLogoGithub/> <span className="text-[#00bf73] hover:text-black ">Sign up with GitHub</span></button></Link>
+               <Link><button className=" flex bg-[#00bf7331] hover:bg-white w-80 md:w-96 my-3 items-center gap-2 p-2 px-16 md:px-20 rounded-lg  font-medium border border-[#00bf73] justify-center block"><BiLogoGithub/> <span className="text-[#00bf73] hover:text-black ">Sign up with GitHub</span></button></Link>
 
-               <Link><button className=" flex bg-[#00bf7331] hover:bg-white md:w-96 my-3 items-center gap-2 p-2 px-20 rounded-lg  font-medium border   border-[#00bf73] justify-center block"><FcGoogle /> <span className="text-[#00bf73] hover:text-black">Sign up with Google</span></button></Link>
-               
-               <Link><button className=" flex bg-[#00bf7331] hover:bg-white md:w-96 my-3 items-center gap-2 p-2 px-20 rounded-lg text-[#00bf73] font-medium border   border-[#00bf73] justify-center block"><BiLogoFacebook/> <span className="text-[#00bf73] hover:text-black">Sign up with Facebook</span></button></Link>
+               <Link><button onClick={handleGoogle} className=" flex bg-[#00bf7331] hover:bg-white  w-80 md:w-96 my-3 items-center gap-2 p-2 px-16 md:px-20 rounded-lg  font-medium border   border-[#00bf73] justify-center block"><FcGoogle /> <span className="text-[#00bf73] hover:text-black">Sign up with Google</span></button></Link>
+
+               <Link><button className=" flex bg-[#00bf7331] hover:bg-white w-80 md:w-96 my-3 items-center gap-1 p-2 px-14 md:px-20 rounded-lg  font-medium border   border-[#00bf73] justify-center block"><BiLogoFacebook/> <span className="text-[#00bf73] hover:text-black">Sign up with Facebook</span></button></Link>
               </div>
                
                
         <p className=" text-base font-semibold mt-5">Are you already account ?  <Link to={'/login'} className=" text-[#00bf73] ">LogIn </Link></p>
       </form>
-      </div>  
+      </div> 
+       <ToastContainer/>
           </div>
+          
      );
 };
 

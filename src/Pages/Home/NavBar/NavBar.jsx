@@ -1,7 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { CiUser } from 'react-icons/ci';
+import { AiOutlineSetting ,AiOutlineLogout} from 'react-icons/ai';
+import { MdOutlineDashboardCustomize,MdNotificationsActive } from 'react-icons/md';
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { useContext } from "react";
 
 const NavBar = () => {
+  const {user,logOut} = useContext(AuthContext)
+  console.log(user);
+   const handleLogOut = ()=>{
+    logOut()
+   }
+ 
      const links = <>
      <li><NavLink to='/'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold "
@@ -26,7 +36,7 @@ const NavBar = () => {
         {links}
       </ul>
     </div>
-    <a className=" normal-case text-xl lg:mb-2  md:text-4xl ">Acade<span className=" text-3xl md:text-4xl lg:text-5xl mb-1.5 md:mb-2 font-extrabold text-[#00bf73]">mie</span></a>
+    <Link href="/" className=" normal-case text-xl lg:mb-2  md:text-4xl ">Acade<span className=" text-3xl md:text-4xl lg:text-5xl mb-1.5 md:mb-2 font-extrabold text-[#00bf73]">mie</span></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -35,27 +45,43 @@ const NavBar = () => {
   </div>
   <div className="navbar-end text-sm font-medium "> 
 
-  <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost hidden ">
-      <CiUser className=" text-black "/>
+    {
+      user ?  <div className="dropdown">
+      <label tabIndex={0} className="  ">
+        {
+          user.photoURL? <img src={user.photoURL} className="rounded-full h-10 w-10" /> : <CiUser className=" cursor-pointer text-black bg-slate-300 p-1 w-10 h-10 rounded-full"/>
+        }
+      
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 w-20 z-[1] p-2 shadow bg-base-100 rounded-box ">
-      <NavLink  to={'/login'} >Login</NavLink > 
-    <NavLink  to={'/register'}>Register</NavLink >
+      <ul tabIndex={0} className="menu menu-sm dropdown-content right-0 h-72 mt-5 w-52 z-[1] p-3 shadow  border-2 border-[#00bf73]  bg-slate-100  rounded-lg">
+      {
+          user.photoURL? <img src={user.photoURL} className="rounded-full h-10 w-10" /> : <CiUser className=" cursor-pointer text-black bg-slate-300 p-1 w-10 h-10 mx-auto rounded-full"/>
+        }
+      <h2 className=" text-center text-lg font-semibold mt-2">{user.displayName}</h2>
+      <button className=" bg-[#00bf73] p-1 rounded-lg text-white my-2">View Profile</button>
+      <div className=" border-t-2">
+        <h2 className=" flex items-center gap-2 my-3 cursor-pointer text-black"><MdOutlineDashboardCustomize/> <span className="  hover:text-[#00bf73]">Dashboard</span></h2>
+        <h2 className=" flex items-center gap-2 my-3 cursor-pointer text-black"><MdNotificationsActive/> <span className="  hover:text-[#00bf73]">Notifications</span></h2>
+        <h2 className=" flex items-center gap-2 my-3 cursor-pointer text-black"><AiOutlineSetting/> <span className="  hover:text-[#00bf73]">User Settings</span></h2>
+       <button onClick={handleLogOut} className=" flex items-center gap-2 my-2 cursor-pointer text-black"><AiOutlineLogout/> <span className="  hover:text-[#00bf73]">LogOut</span></button> 
+      </div>
+      
       </ul>
     </div>
-         <div className="flex items-center justify-center gap-2 menu menu-horizontal">
-         <CiUser className=" text-black hover:text-[#00bf73] "/>
-    <div className=" flex items-center justify-center ">
-    <NavLink to='/login'  className={({ isActive, isPending }) =>
+      :
+      <div className="flex items-center  justify-center gap-2 menu menu-horizontal">
+      <CiUser className="  text-black  hover:text-[#00bf73] "/>
+      <div className=" flex items-center justify-center ">
+      <NavLink to='/login'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
               }>LogIn</NavLink>
-    <li className=" mx-2">/</li>
-    <NavLink to='/register'  className={({ isActive, isPending }) =>
+      <li className=" mx-2">/</li>
+      <NavLink to='/register'  className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? " text-[#00bf73]   underline font-semibold" : "font-semibold"
               }>Register</NavLink>
     </div>
          </div>
+         }
   </div>
 </div>
           </div>

@@ -14,11 +14,11 @@ const Banner = () => {
   }, [])
      return (
           <div>
-               <div className="carousel w-full h-[50vh] md:h-[70vh] lg:h-[90vh] ">
+               <div className="carousel  w-full h-[50vh] md:h-[70vh] lg:h-[90vh] ">
   <div id="slide1" className="carousel-item relative w-full bg-slate-100">
-    <div className=' flex items-center justify-between lg:gap-28  mx-5 lg:mx-auto md:mx-auto'>
-   
-     <div className='w-[400px] lg:w-[600px]'>
+    <div className=' flex items-center justify-between lg:gap-28  mx-5 lg:mx-auto md:mx-10'>
+   {/* slide 1st */}
+     <div className='w-[300px] md:w-[500px] lg:w-[600px] '>
      <div data-aos="fade-up"
      data-aos-duration="1520">
           <h1 className=' md:text-3xl lg:text-5xl font-extrabold text-[#00bf73] mb-5'>We Ensure Better Education For a Better World</h1></div>
@@ -30,15 +30,13 @@ const Banner = () => {
     <div className=' relative'>
 
     <div data-aos="fade-left"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
+      data-aos-anchor="#example-anchor"
      data-aos-duration="2500">
 
      <img src={backgroud} className=' w-full md:mt-5 lg:mt-20 absolute' alt="" />
      </div>
      <div data-aos="fade-left"
-     data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
+    data-aos-anchor="#example-anchor"
      data-aos-duration="2700">
 
      <img src={backgroud2} className=' w-full md:-ml-10 ml-4 md:mt-5 lg:mt-20 absolute' alt="" />
@@ -46,14 +44,13 @@ const Banner = () => {
 
      <div data-aos="fade-left"
      data-aos-anchor="#example-anchor"
-     data-aos-offset="500"
      data-aos-duration="1000">
 
-    <img src= {banner3} className="w-[200px] lg:w-[350px]  relative  lg:h-[500px]" />
+    <img src= {banner3} className="w-[150px] md:w-[350px] lg:mt-9 relative h-[180px] md:h-[310px] lg:h-[520px]" />
      </div>
     </div>
     </div>
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-7 lg:top-1/2">
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-5 lg:top-1/2">
       <a href="#slide4" className="btn btn-circle ">❮</a> 
       <a href="#slide2" className="btn btn-circle">❯</a>
     </div>
@@ -75,7 +72,7 @@ const Banner = () => {
      </div>
     
     </div>
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-7 lg:top-1/2">
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-5 lg:top-1/2">
       <a href="#slide1" className="btn btn-circle">❮</a> 
       <a href="#slide3" className="btn btn-circle">❯</a>
     </div>
@@ -90,10 +87,10 @@ const Banner = () => {
     <div className=' relative'>
      <img src={backgroud} className=' w-full md:mt-5 lg:mt-20 absolute' alt="" />
      <img src={backgroud2} className=' w-full md:-ml-10 ml-4 md:mt-5 lg:mt-20 absolute' alt="" />
-    <img src={banner3} className="w-[200px] lg:w-[350px]  relative  lg:h-[500px]" />
+    <img src={banner3} className="w-[150px] lg:w-[350px]  relative  lg:h-[500px]" />
     </div>
     </div>
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-7 lg:top-1/2">
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-4 lg:top-1/2">
       <a href="#slide2" className="btn btn-circle">❮</a> 
       <a href="#slide4" className="btn btn-circle">❯</a>
     </div>
@@ -115,7 +112,7 @@ const Banner = () => {
      </div>
     
     </div>
-    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-7 lg:top-1/2">
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-1 lg:left-5 lg:right-5 right-1 -bottom-5 lg:top-1/2">
       <a href="#slide3" className="btn btn-circle">❮</a> 
       <a href="#slide1" className="btn btn-circle">❯</a>
     </div>

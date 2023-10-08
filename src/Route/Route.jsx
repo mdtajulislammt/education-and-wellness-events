@@ -6,6 +6,7 @@ import Services from "../Pages/Home/Services/Services";
 import Errorpage from "../ErrorPage/Errorpage";
 import LogIn from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
+import PrivedRoute from "../PrivedRoute/PrivedRoute";
 
 
 
@@ -28,7 +29,7 @@ import Register from "../Pages/Register/Register";
                },
               {
                 path: "/services/:id",
-                 element: <ServiceDetail></ServiceDetail>,
+                 element: <PrivedRoute><ServiceDetail></ServiceDetail></PrivedRoute>,
                  loader:()=>fetch('/services.json'),
               },
               {
