@@ -6,6 +6,7 @@ const ServiceDetails = ({ service }) => {
   return (
     <div>
       <div className="border border-[#00bf73]  h-90 rounded-lg">
+        
         <figure>
           <img
             src={image}
@@ -22,7 +23,7 @@ const ServiceDetails = ({ service }) => {
           </span>
         </h2>
         </div>
-        <Link to={`/services/${id}`}><button className="py-2 rounded-b-md font-bold w-full bg-[#00bf73] text-white ">Details</button></Link>
+        <Link to={`/service/${id}`}><button className="py-2 rounded-b-md font-bold w-full bg-[#00bf73] text-white ">Details</button></Link>
       </div>
       </div>
   );

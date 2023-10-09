@@ -16,9 +16,9 @@ const Banner = () => {
           <div>
                <div className="carousel  w-full h-[50vh] md:h-[70vh] lg:h-[90vh] ">
   <div id="slide1" className="carousel-item relative w-full bg-slate-100">
-    <div className=' flex items-center justify-between lg:gap-28  mx-5 lg:mx-auto md:mx-10'>
+    <div className=' flex items-center justify-between md:gap-16 lg:gap-28  mx-5 lg:mx-auto md:mx-10'>
    {/* slide 1st */}
-     <div className='w-[300px] md:w-[500px] lg:w-[600px] '>
+     <div className='w-[300px] md:w-[400px] lg:w-[600px] '>
      <div data-aos="fade-up"
      data-aos-duration="1520">
           <h1 className=' md:text-3xl lg:text-5xl font-extrabold text-[#00bf73] mb-5'>We Ensure Better Education For a Better World</h1></div>
@@ -46,7 +46,7 @@ const Banner = () => {
      data-aos-anchor="#example-anchor"
      data-aos-duration="1000">
 
-    <img src= {banner3} className="w-[150px] md:w-[350px] lg:mt-9 relative h-[180px] md:h-[310px] lg:h-[520px]" />
+    <img src= {banner3} className="w-[150px] md:w-[300px] lg:w-[350px] lg:mt-9 relative h-[180px] md:h-[310px] lg:h-[520px]" />
      </div>
     </div>
     </div>

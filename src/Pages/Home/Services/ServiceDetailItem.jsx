@@ -1,12 +1,18 @@
 import { Rating } from "@mui/material";
 import { AiOutlineShareAlt } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const ServiceDetailItem = ({ services }) => {
   const {  name, image, price, short_description,rating} = services || {};
+
  
   return (
-    <div className="flex grid-cols-3 gap-5 mx-20 mt-12 ">
-      <div className="  border rounded-xl shadow-lx sticky top-2 border-[#00bf73] p-4 w-72 h-[470px]">
+    
+    <div >
+        <Link to={`/service`}><button className="py-2 sticky top-0 rounded-b-md font-bold w-full bg-[#00bf73] text-white ">Back All Services</button></Link>
+
+      <div className="grid lg:grid-cols-3  md:grid-cols-1 gap-5 mx-5 md:mx-10 lg:mx-20 mt-12 ">
+      <div className="  border rounded-xl shadow-lx  border-[#00bf73] p-4 w-full md:w-full  h-[470px]">
         <h2 className="flex justify-between text-lg  font-medium mb-4"> Price
           <span className=" text-xl font-extrabold text-[#00bf73] ">
             {price} $
@@ -43,10 +49,10 @@ const ServiceDetailItem = ({ services }) => {
           </div>
         </div>
       </div>
-      <div className="col-span-2  w-[850px]">
+      <div className=" lg:col-span-2 ">
         <img className="  rounded-xl w-full" src={image} alt="" />
         <div className=" p-5">
-          <h2 className=" text-4xl font-bold text-[#00bf73]">{name}</h2>
+          <h2 className=" text-xl lg:text-4xl font-bold text-[#00bf73]">{name}</h2>
           <p className=" leading-8">{short_description}</p>
         </div>
 
@@ -59,6 +65,7 @@ const ServiceDetailItem = ({ services }) => {
 
 
       </div>
+    </div>
     </div>
   );
 };

@@ -7,6 +7,8 @@ import Errorpage from "../ErrorPage/Errorpage";
 import LogIn from "../Pages/LogIn/LogIn";
 import Register from "../Pages/Register/Register";
 import PrivedRoute from "../PrivedRoute/PrivedRoute";
+import Service from "../Pages/Home/NavBar/Service/Service";
+import FestivalGallery from "../Pages/Home/FestivalGallery/FestivalGallery";
 
 
 
@@ -28,7 +30,7 @@ import PrivedRoute from "../PrivedRoute/PrivedRoute";
                 element:<Services></Services>
                },
               {
-                path: "/services/:id",
+                path: "/service/:id",
                  element: <PrivedRoute><ServiceDetail></ServiceDetail></PrivedRoute>,
                  loader:()=>fetch('/services.json'),
               },
@@ -39,6 +41,16 @@ import PrivedRoute from "../PrivedRoute/PrivedRoute";
               {
                path:'/register',
                element:<Register></Register>
+              },
+           
+              {
+               path:'/service',
+               element:<Service></Service>,
+               loader:()=>fetch('/services.json'),
+              },
+              {
+               path:'/gallery',
+               element:<FestivalGallery></FestivalGallery>
               },
            ]
            },
