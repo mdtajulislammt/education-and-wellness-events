@@ -1,3 +1,5 @@
+## Website Name --> Academie 
+Live Live Link: https://652422c077b8e50a82a30b4f--melodic-parfait-231031.netlify.app/
 ## Our website is designed for educational events management through which you can join educational events. On first entering this website you will see an overview of the events
 
 -  Then you can see different types of education services. You can take any of these events that you like.

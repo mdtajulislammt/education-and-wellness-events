@@ -31,11 +31,10 @@ const OurTeachers = () => {
                </div>
               <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-16'>
                {/* 1st card */}
-               <div data-aos="fade-right"
-                    data-aos-easing="linear"
+               <div data-aos="fade-up"
                     data-aos-duration="800">
                <div className="">
-                    <img className=" rounded-t-md md:h-[200px]" src={teacher1} alt=""/>
+                    <img className=" rounded-t-md md:h-[200px] w-full" src={teacher1} alt=""/>
                     <div className=" bg-[#00bf73] text-white rounded-b-md p-2 border-l-2 border-r-2 border-b-2 border-[#00bf73] fadeIn-bottom">
                     <h3 className="text-xl font-semibold my-3">Chakmu Mack</h3>
                     <p className="">This expert has an extensive list of achievements along all the years.</p>
@@ -46,10 +45,9 @@ const OurTeachers = () => {
 
                {/* 2nd card */}
                <div data-aos="fade-down"
-                    data-aos-easing="linear"
                     data-aos-duration="800">
                <div className="">
-                    <img className=" rounded-t-md md:h-[200px]" src={teacher2} alt=""/>
+                    <img className=" rounded-t-md md:h-[200px] w-full" src={teacher2} alt=""/>
                     <div className=" bg-[#00bf73] text-white rounded-b-md p-2 border-l-2 border-r-2 border-b-2 border-[#00bf73] fadeIn-bottom">
                     <h3 className="text-xl font-semibold my-3">Shalo kaich</h3>
                     <p className="">This expert has an extensive list of achievements along all the years.</p>
@@ -61,10 +59,9 @@ const OurTeachers = () => {
                
                {/* 3rd card */}
                <div data-aos="fade-up"
-                    data-aos-easing="linear"
                     data-aos-duration="800">
                <div className="">
-                    <img className=" rounded-t-md  md:h-[200px]" src={teacher3} alt=""/>
+                    <img className=" rounded-t-md  md:h-[200px] w-full" src={teacher3} alt=""/>
                     <div className=" bg-[#00bf73] text-white rounded-b-md p-2 border-l-2 border-r-2 border-b-2 border-[#00bf73] fadeIn-bottom">
                     <h3 className="text-xl font-semibold my-3">Bill Host</h3>
                     <p className="">This expert has an extensive list of achievements along all the years.</p>
@@ -72,11 +69,10 @@ const OurTeachers = () => {
 
                </div></div>
                {/* 4th card */}
-               <div data-aos="fade-left"
-                    data-aos-easing="linear"
+               <div data-aos="fade-down"
                     data-aos-duration="800">
                <div className="">
-                    <img className=" rounded-t-md md:h-[200px]" src={teacher4} alt=""/>
+                    <img className=" rounded-t-md md:h-[200px] w-full" src={teacher4} alt=""/>
                     <div className=" bg-[#00bf73] text-white rounded-b-md p-2 border-l-2 border-r-2 border-b-2 border-[#00bf73] fadeIn-bottom">
                     <h3 className="text-xl font-semibold my-3">Chaiku Mainye</h3>
                     <p className="">This expert has an extensive list of achievements along all the years.</p>

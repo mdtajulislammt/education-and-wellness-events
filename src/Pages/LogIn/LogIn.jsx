@@ -10,11 +10,13 @@ import { BiLogoFacebook, BiLogoGithub } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 
 
+
 const LogIn = () => {
   const [showPassword,setShowPassword] = useState(false)
   const {logIn,user,signInWithGoogle} = useContext(AuthContext)
    const navigate = useNavigate()
      const location = useLocation()
+ 
 
 
   // login setup
@@ -43,6 +45,7 @@ const LogIn = () => {
       console.log(res.user);
       toast.success('Successfully Google Register!')
       setTimeout(()=>{navigate(location?.state ? location.state : '/')},1000)
+      
     })
     .catch(err =>{
       console.log(err.message)

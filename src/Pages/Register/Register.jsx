@@ -24,6 +24,7 @@ const Register = () => {
     const password = e.target.password.value ;
     const accepte = e.target.terms.checked ;
     console.log(email,password,name);
+    const spacialPass = /[!@#$%^&*(),.?":{}|<>]/;
 
     if(password.length < 6 ){
       toast.error('Password must be at least 6 characters or longer')
@@ -31,7 +32,7 @@ const Register = () => {
   }else if(!/[A-Z]/.test(password)){
     toast.error('Password must contain at least one uppercase letter')
     return ;
-  }else if(!/[$&+,:;=?@#|'<>.-^*()%!]/.test(password)){
+  }else if(!spacialPass.test(password)){
     toast.error('Password must contain at least one special character')
     return ;
   }else if(!accepte){

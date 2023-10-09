@@ -9,17 +9,21 @@ import gallery7 from '../../../assets/gallery7.jpg'
 import gallery8 from '../../../assets/gallery8.jpg'
 import gallery9 from '../../../assets/gallery9.jpg'
 import Marquee from "react-fast-marquee";
-
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from "react";
 
 const FestivalGallery = () => {
+     useEffect(() => {
+          AOS.init();
+        }, [])
      return (
-          <div>
+          <div className="mt-10">
               <div data-aos="fade-down"
-                    data-aos-easing="linear"
                     data-aos-duration="500">
                <div className=' mt-7 text-center'>
-               <h2 className=' text-2xl md:text-4xl font-semibold'>Festival Gallery</h2>
-               <p className='text-sm'>Our best services for you</p>
+               <h2 className=' text-2xl md:text-4xl font-semibold text-black'>Festival Gallery</h2>
+               <p className='text-sm text-black'>Our best services for you</p>
                </div>
                
 
@@ -31,6 +35,8 @@ const FestivalGallery = () => {
                </div>
                </div>
                <div className="mt-5">
+               <div data-aos="fade-up"
+                    data-aos-duration="1000">
                <Marquee direction="right" speed='30'>
                <div className=" flex items-center w-[150px] md:w-[300px] h-[100px] md:h-[150px] lg:h-[250px] ">
                     <img className="h-full "  src={gallery1} alt="" />
@@ -41,6 +47,9 @@ const FestivalGallery = () => {
                    
                </div>
                </Marquee>
+               </div>
+               <div data-aos="fade-up"
+                    data-aos-duration="1000">
                <Marquee direction="left" speed='30'>
                <div className=" flex items-center w-[150px] md:w-[300px] h-[100px] md:h-[150px] lg:h-[250px] ">
                     <img className="h-full " src={gallery6} alt="" />
@@ -51,6 +60,7 @@ const FestivalGallery = () => {
                    
                </div>
                </Marquee>
+               </div>
                </div>
           </div>
      );

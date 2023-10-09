@@ -40,7 +40,7 @@ const NavBar = () => {
         
      </>
      return (
-          <div className="mx-3 md:mx-14 lg:mx-20">
+          <div className="mx-3 md:mx-14 lg:mx-20 ">
                <div className="navbar bg-base-100 rounded-xl ">
   <div className="navbar-start">
     <div className="dropdown">
